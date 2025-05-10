@@ -11,11 +11,13 @@ export class Fish extends Actor {
         this.scale = new Vector(sc, sc)
 
         this.pos = new Vector(Math.random() * 1280, Math.random() * 720)
-        this.vel = new Vector(Math.random() * 100 - 50, Math.random() * 100 - 50)
+        this.vel = new Vector(-(Math.random() * 90 + 10), Math.random() * 20 - 10) 
 
         this.events.on("exitviewport", (e) => this.fishLeft(e))
     }
 
     fishLeft(e) {
         e.target.pos = new Vector(1350, Math.random() * 720) 
+        e.target.vel = new Vector(-(Math.random() * 90 + 10), Math.random() * 20 - 10)
+    }
 }

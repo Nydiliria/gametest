@@ -3,6 +3,9 @@ import { Actor, Engine, Vector, DisplayMode } from "excalibur"
 import { Resources, ResourceLoader } from './resources.js'
 import { Shark} from "./shark.js"
 import { Fish } from './fish.js'
+import { Bubble } from './bubble.js'
+import { Background } from './background.js'
+
 
 export class Game extends Engine {
 
@@ -17,12 +20,35 @@ export class Game extends Engine {
     }
 
     startGame() {
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 15; i++) {
         console.log("start de game!")
         let fishOne = new Fish() 
         this.add(fishOne)
         }
+
+        this.addShark()
+        
+        for (let i = 0; i < 3; i++) { 
+            this.addBubble()
+        }
+
+        //this.addBackground()
     }
+
+    addShark() {
+        let sharkOne = new Shark()
+        this.add(sharkOne)
+    }
+
+    addBubble() {
+        let bubbleOne = new Bubble()
+        this.add(bubbleOne)
+    }
+
+    /*addBackground() {
+        let backgroundOne = new Background
+        this.add(backgroundOne)
+    }*/
 
 }
 
